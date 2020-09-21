@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ungpwa/widget/register.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -14,7 +15,11 @@ class _AuthenState extends State<Authen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: RadialGradient(colors: [Colors.white, Colors.lime],),
+          gradient: RadialGradient(
+            center: Alignment(0, -0.5),
+            radius: 1.0,
+            colors: [Colors.white, Colors.lime],
+          ),
         ),
         child: Center(
           child: SingleChildScrollView(
@@ -37,7 +42,11 @@ class _AuthenState extends State<Authen> {
 
   FlatButton buildFlatButton() {
     return FlatButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Register(),)
+        );
+      },
       child: Text(
         'New Registrer',
         style: TextStyle(color: Colors.pink),
