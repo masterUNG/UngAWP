@@ -12,17 +12,49 @@ class _AuthenState extends State<Authen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              buildContainer(),
-              buildText(),
-              buildContainerUser(),
-              buildContainerPassword(),
-            ],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(colors: [Colors.white, Colors.lime],),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                buildContainer(),
+                buildText(),
+                buildContainerUser(),
+                buildContainerPassword(),
+                buildLogin(),
+                buildFlatButton()
+              ],
+            ),
           ),
+        ),
+      ),
+    );
+  }
+
+  FlatButton buildFlatButton() {
+    return FlatButton(
+      onPressed: () {},
+      child: Text(
+        'New Registrer',
+        style: TextStyle(color: Colors.pink),
+      ),
+    );
+  }
+
+  Container buildLogin() {
+    return Container(
+      margin: EdgeInsets.only(top: 16),
+      width: 250,
+      child: RaisedButton(
+        color: Colors.purple.shade700,
+        onPressed: () {},
+        child: Text(
+          'Login',
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
