@@ -47,5 +47,11 @@
     <string>Requires Access Your Location for Register</string>
     <key>io.flutter.embedded_views_preview</key>
     <true/>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Require Camera for Register</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Require Camera for Register</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Require Camera for Register</string>
 </dict>
 </plist>
