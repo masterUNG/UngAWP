@@ -27,14 +27,13 @@ class _RegisterState extends State<Register> {
       width: 250,
       child: TextField(
         decoration: InputDecoration(
+            prefixIcon: Icon(Icons.face, color: Color(0xFFE81EE8),),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.red)
-            ),
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(color: Colors.black38)),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.blue)
-            )),
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(color: Colors.blue))),
       ),
     );
   }
