@@ -13,10 +13,44 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.purple.shade700,
         title: Text('Register'),
       ),
-      body: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Column(
+        children: [
+          buildAvatar(),
+          buildName(),
+        ],
+      ),
+    );
+  }
+
+  Container buildName() {
+    return Container(
+      width: 250,
+      child: TextField(
+        decoration: InputDecoration(
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: Colors.red)
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: Colors.blue)
+            )),
+      ),
+    );
+  }
+
+  Container buildAvatar() {
+    return Container(
+      margin: EdgeInsets.only(top: 16, bottom: 16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(icon: Icon(Icons.add_a_photo), onPressed: null),
-          Container(width: 180,height: 180,child: Image.asset('images/avatar.png'),) ,
+          Container(
+            width: 180,
+            height: 180,
+            child: Image.asset('images/avatar.png'),
+          ),
           IconButton(icon: Icon(Icons.add_photo_alternate), onPressed: null),
         ],
       ),
