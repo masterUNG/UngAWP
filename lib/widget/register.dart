@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:location/location.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -22,9 +23,25 @@ class _RegisterState extends State<Register> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    findLatLng();
   }
 
-  
+  Future<Null> findLatLng() async {
+    LocationData locationData = await findLocation();
+    lat = locationData.latitude;
+    lng = locationData.longitude;
+    print('lat = $lat, lng = $lng');
+  }
+
+  Future<LocationData> findLocation() async {
+    Location location = Location();
+    try {
+      return await location.getLocation();
+    } catch (e) {
+      print('e findLocation ==> ${e.toString()}');
+      return null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
