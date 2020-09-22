@@ -45,5 +45,7 @@
     <string>Requires Access Your Location for Register</string>
     <key>NSLocationAlwaysUsageDescription</key>
     <string>Requires Access Your Location for Register</string>
+    <key>io.flutter.embedded_views_preview</key>
+    <true/>
 </dict>
 </plist>
