@@ -32,6 +32,7 @@ dependencies:
   location: ^3.0.2
   google_maps_flutter: ^0.5.32
   image_picker: ^0.6.7+10
+  firebase_core: ^0.5.0
 
 dev_dependencies:
   flutter_test:

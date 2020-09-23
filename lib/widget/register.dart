@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
@@ -260,7 +261,13 @@ class _RegisterState extends State<Register> {
     } else if (choosePosition == null) {
       normalDialog(context, 'Plese Choose Position');
     } else {
-      
+      uploadThread();
     }
+  }
+
+  Future<Null> uploadThread() async {
+    await Firebase.initializeApp().then((value) {
+      print('Success Connected');
+    });
   }
 }
