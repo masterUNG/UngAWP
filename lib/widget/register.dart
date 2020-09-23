@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:location/location.dart';
+import 'package:ungpwa/utility/normal_dialog.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _RegisterState extends State<Register> {
     'HR Generalist/ Specialist',
     'Logistic Manager'
   ];
-  String choosePosition;
+  String choosePosition, name, user, password;
   double lat, lng;
   File file;
 
@@ -54,6 +55,12 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: Icon(Icons.cloud_upload),
+            onPressed: () => uploadImage(),
+          )
+        ],
         backgroundColor: Colors.purple.shade700,
         title: Text('Register'),
       ),
@@ -140,6 +147,7 @@ class _RegisterState extends State<Register> {
     return Container(
       width: 250,
       child: TextField(
+        onChanged: (value) => name = value.trim(),
         decoration: InputDecoration(
             hintText: 'Display Name',
             prefixIcon: Icon(
@@ -160,6 +168,7 @@ class _RegisterState extends State<Register> {
     return Container(
       width: 250,
       child: TextField(
+        onChanged: (value) => user = value.trim(),
         decoration: InputDecoration(
             hintText: 'User',
             prefixIcon: Icon(
@@ -180,6 +189,7 @@ class _RegisterState extends State<Register> {
     return Container(
       width: 250,
       child: TextField(
+        onChanged: (value) => password = value.trim(),
         decoration: InputDecoration(
             hintText: 'Password',
             prefixIcon: Icon(
@@ -234,5 +244,23 @@ class _RegisterState extends State<Register> {
         ],
       ),
     );
+  }
+
+  Future<Null> uploadImage() async {
+    print('name = $name, user = $user, password = $password');
+    if (file == null) {
+      normalDialog(context, 'Please Choose Avatar');
+    } else if (name == null ||
+        name.isEmpty ||
+        user == null ||
+        user.isEmpty ||
+        password == null ||
+        password.isEmpty) {
+      normalDialog(context, 'Have Space, Please Fill Every Blank');
+    } else if (choosePosition == null) {
+      normalDialog(context, 'Plese Choose Position');
+    } else {
+      
+    }
   }
 }
