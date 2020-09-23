@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "818827490324",
+    "firebase_url": "https://ungawp-d425d.firebaseio.com",
+    "project_id": "ungawp-d425d",
+    "storage_bucket": "ungawp-d425d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818827490324:android:e0c81b114727b1e56f2301",
+        "android_client_info": {
+          "package_name": "com.pwacoth.ungpwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818827490324-sk86dr12m236kumchlq39fn9umjd29up.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1akVXYyaA8_F7yrhPaGBk20yKyscv9vI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818827490324-sk86dr12m236kumchlq39fn9umjd29up.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

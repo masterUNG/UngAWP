@@ -8,8 +8,15 @@ Future<Null> normalDialog(BuildContext context, String string) async {
         leading: Container(
           width: 36,
           child: Image.asset('images/logo.png'),
-        ),title: Text(string),
-      ),children: [FlatButton(onPressed: () => Navigator.pop(context), child: Text('OK'))],
+        ),
+        title: Text(string),
+      ),
+      children: [
+        FlatButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text('OK'),
+        )
+      ],
     ),
   );
 }
