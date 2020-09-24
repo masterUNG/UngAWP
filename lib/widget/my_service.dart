@@ -3,6 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ungpwa/models/user_model.dart';
 import 'package:ungpwa/widget/authen.dart';
+import 'package:ungpwa/widget/list_friend.dart';
+import 'package:ungpwa/widget/read_qr.dart';
+import 'package:ungpwa/widget/show_qr.dart';
 
 class MyService extends StatefulWidget {
   @override
@@ -12,6 +15,9 @@ class MyService extends StatefulWidget {
 class _MyServiceState extends State<MyService> {
   String uidLogin;
   UserModel userModel;
+  Widget currentWidget = ListFriend();
+  List<String> titles = ['List Friend', 'Show QR code', 'Read QR code'];
+  int indexTitle = 0;
 
   @override
   void initState() {
@@ -45,8 +51,11 @@ class _MyServiceState extends State<MyService> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(titles[indexTitle]),
+      ),
       drawer: buildDrawer(),
+      body: currentWidget,
     );
   }
 
@@ -71,6 +80,13 @@ class _MyServiceState extends State<MyService> {
 
   ListTile buildListTile1() {
     return ListTile(
+      onTap: () {
+        Navigator.pop(context);
+        setState(() {
+          currentWidget = ListFriend();
+          indexTitle = 0;
+        });
+      },
       leading: Icon(
         Icons.filter_1,
         size: 36,
@@ -82,6 +98,13 @@ class _MyServiceState extends State<MyService> {
 
   ListTile buildListTile2() {
     return ListTile(
+      onTap: () {
+        Navigator.pop(context);
+        setState(() {
+          currentWidget = ShowQR(uid: uidLogin,);
+          indexTitle = 1;
+        });
+      },
       leading: Icon(
         Icons.filter_2,
         size: 36,
@@ -93,6 +116,13 @@ class _MyServiceState extends State<MyService> {
 
   ListTile buildListTile3() {
     return ListTile(
+      onTap: () {
+        Navigator.pop(context);
+        setState(() {
+          currentWidget = ReadQR();
+          indexTitle = 2;
+        });
+      },
       leading: Icon(
         Icons.filter_3,
         size: 36,
