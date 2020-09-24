@@ -54,26 +54,69 @@ class _MyServiceState extends State<MyService> {
     return Drawer(
       child: Stack(
         children: [
-          UserAccountsDrawerHeader(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/wall.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            accountName: Text(userModel == null ? 'Name' : userModel.name),
-            accountEmail:
-                Text(userModel == null ? 'Position' : userModel.position),
-            currentAccountPicture: userModel == null
-                ? Image.asset('images/avatar.png')
-                : Image.network(
-                    userModel.path,
-                    fit: BoxFit.cover,
-                  ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              buildUserAccountsDrawerHeader(),
+              buildListTile1(),
+              buildListTile2(),
+              buildListTile3(),
+            ],
           ),
           buildSingOut(),
         ],
       ),
+    );
+  }
+
+  ListTile buildListTile1() {
+    return ListTile(
+      leading: Icon(
+        Icons.filter_1,
+        size: 36,
+      ),
+      title: Text('List Friend'),
+      subtitle: Text('แสดงรายชื่อของ เพื่อนเรา'),
+    );
+  }
+
+  ListTile buildListTile2() {
+    return ListTile(
+      leading: Icon(
+        Icons.filter_2,
+        size: 36,
+      ),
+      title: Text('Show QR code'),
+      subtitle: Text('แสดง QR code'),
+    );
+  }
+
+  ListTile buildListTile3() {
+    return ListTile(
+      leading: Icon(
+        Icons.filter_3,
+        size: 36,
+      ),
+      title: Text('Read QR Code'),
+      subtitle: Text('อ่าน QR Code'),
+    );
+  }
+
+  UserAccountsDrawerHeader buildUserAccountsDrawerHeader() {
+    return UserAccountsDrawerHeader(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('images/wall.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      accountName: Text(userModel == null ? 'Name' : userModel.name),
+      accountEmail: Text(userModel == null ? 'Position' : userModel.position),
+      currentAccountPicture: userModel == null
+          ? Image.asset('images/avatar.png')
+          : CircleAvatar(
+              backgroundImage: NetworkImage(userModel.path),
+            ),
     );
   }
 
