@@ -8,6 +8,22 @@ class MyService extends StatefulWidget {
 }
 
 class _MyServiceState extends State<MyService> {
+  String uidLogin;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    findLogin();
+  }
+
+  Future<Null> findLogin() async {
+    await FirebaseAuth.instance.authStateChanges().listen((event) {
+      uidLogin = event.uid;
+      print('uidLogin ==>> $uidLogin');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +36,8 @@ class _MyServiceState extends State<MyService> {
     return Drawer(
       child: Stack(
         children: [
-          UserAccountsDrawerHeader(accountName: Text('Name'), accountEmail: Text('Email')),
+          UserAccountsDrawerHeader(
+              accountName: Text('Name'), accountEmail: Text('Email')),
           buildSingOut(),
         ],
       ),
