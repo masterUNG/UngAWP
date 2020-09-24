@@ -55,8 +55,21 @@ class _MyServiceState extends State<MyService> {
       child: Stack(
         children: [
           UserAccountsDrawerHeader(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/wall.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
             accountName: Text(userModel == null ? 'Name' : userModel.name),
-            accountEmail: Text('Email'),
+            accountEmail:
+                Text(userModel == null ? 'Position' : userModel.position),
+            currentAccountPicture: userModel == null
+                ? Image.asset('images/avatar.png')
+                : Image.network(
+                    userModel.path,
+                    fit: BoxFit.cover,
+                  ),
           ),
           buildSingOut(),
         ],
