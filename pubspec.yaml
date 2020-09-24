@@ -38,6 +38,7 @@ dependencies:
   cloud_firestore: ^0.14.0+2
   qr_flutter: ^3.2.0
   barcode_scan: ^3.0.1
+  dio: ^3.0.10
 
 dev_dependencies:
   flutter_test:

@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="ungpwa"
+        android:label="Ung PWA"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyDY4ur0uxNn22__msRZDm72f-4beVP4Evk"/>
