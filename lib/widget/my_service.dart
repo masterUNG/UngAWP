@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ungpwa/models/user_model.dart';
 import 'package:ungpwa/widget/authen.dart';
 
 class MyService extends StatefulWidget {
@@ -9,6 +11,7 @@ class MyService extends StatefulWidget {
 
 class _MyServiceState extends State<MyService> {
   String uidLogin;
+  UserModel userModel;
 
   @override
   void initState() {
@@ -21,6 +24,21 @@ class _MyServiceState extends State<MyService> {
     await FirebaseAuth.instance.authStateChanges().listen((event) {
       uidLogin = event.uid;
       print('uidLogin ==>> $uidLogin');
+      findDetailLogin();
+    });
+  }
+
+  Future<Null> findDetailLogin() async {
+    await FirebaseFirestore.instance
+        .collection('UserUng')
+        .doc(uidLogin)
+        .snapshots()
+        .listen((event) {
+      // print('event = ${event.toString()}');
+      setState(() {
+        userModel = UserModel.fromJson(event.data());
+      });
+      // print('name = ${userModel.name}');
     });
   }
 
@@ -37,7 +55,9 @@ class _MyServiceState extends State<MyService> {
       child: Stack(
         children: [
           UserAccountsDrawerHeader(
-              accountName: Text('Name'), accountEmail: Text('Email')),
+            accountName: Text(userModel == null ? 'Name' : userModel.name),
+            accountEmail: Text('Email'),
+          ),
           buildSingOut(),
         ],
       ),
