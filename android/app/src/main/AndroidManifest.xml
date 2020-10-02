@@ -1,12 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pwacoth.ungpwa">
+    package="com.flutterthailand.ungpwa">
     <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="Ung PWA"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyDY4ur0uxNn22__msRZDm72f-4beVP4Evk"/>
+               android:value="AIzaSyBO-V-tB0_sNzl6TfkeIuXVCEpRBz6YgFM"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

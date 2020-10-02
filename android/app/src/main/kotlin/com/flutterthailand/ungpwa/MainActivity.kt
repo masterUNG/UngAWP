@@ -1,4 +1,4 @@
-package com.pwacoth.ungpwa
+package com.flutterthailand.ungpwa
 
 import io.flutter.embedding.android.FlutterActivity
 

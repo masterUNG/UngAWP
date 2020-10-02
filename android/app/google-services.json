@@ -8,6 +8,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:818827490324:android:19aeffa7e604f6ff6f2301",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.ungpwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818827490324-sk86dr12m236kumchlq39fn9umjd29up.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1akVXYyaA8_F7yrhPaGBk20yKyscv9vI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818827490324-sk86dr12m236kumchlq39fn9umjd29up.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818827490324-7brhem0g7mfcjaagngdhckncrv6se90v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pwacoth.ungpwa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:818827490324:android:e0c81b114727b1e56f2301",
         "android_client_info": {
           "package_name": "com.pwacoth.ungpwa"
@@ -30,6 +66,13 @@
             {
               "client_id": "818827490324-sk86dr12m236kumchlq39fn9umjd29up.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "818827490324-7brhem0g7mfcjaagngdhckncrv6se90v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pwacoth.ungpwa"
+              }
             }
           ]
         }
